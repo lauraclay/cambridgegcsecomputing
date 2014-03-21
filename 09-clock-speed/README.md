@@ -1,8 +1,8 @@
-Clock speed
-=============
+#Clock speed
+
 A practical exercise to support episode 9 of the Cambridge GCSE Computing MOOC.
 
-![image](./images/cover.jpg "Cover Image")
+![](./images/cover.jpg "Cover Image")
 
 ##Introduction
 
@@ -10,30 +10,33 @@ This exercise assumes that at least one Raspberry Pi is available, however it is
 
 The exercise is to run two (or more) experiments where a Pi is programmed to count from zero to one million.  The only variable between the tests will be changing the clock speed of the CPU.  Students will be required to time how long this takes manually and monitor the CPU temperature during the test.
 
-## Step 1: Setting Up your Pi(s)
+## Step 0: Setting Up your Pi
+
 First check that you have all the parts you need to get your Raspberry Pi set up and working.
 
 - Raspberry Pi
-- Micro USB power adapter
-- An SD Card with Raspbian already set up through NOOBS
-- USB Keyboard
+- Micro USB power adaptor
+- An SD card with Raspbian already set up through NOOBS
+- USB keyboard
+- USB mouse
 - HDMI cable
-- A Monitor or TV
+- A monitor or TV
 
-**Activity Checklist**
+###Activity Checklist
 
 1.	Place the SD card into the slot of your Raspberry Pi. It will only fit one way so be careful not to break the card. 
 2.	Next connect the HDMI cable from the monitor (or TV) to the HDMI port on the Pi and turn on your monitor. 
-3.	Plug a USB keyboard into a USB slot on the Pi.
+3.	Plug the USB keyboard and mouse into the USB ports on the Pi.
 4.	Plug in the micro USB power supply and you should see some text appear on your screen.
-5.	When prompted to login type:
+5.  When prompted to login type:
 
-	```
-	Login: pi
-	Password: raspberry
-	```
+    ```
+    Login: pi
+    Password: raspberry
+    ```
 
-##Step 2: Set the clock speed
+
+##Step 1: Set the clock speed
 
 To configure the clock speed of your Raspberry Pi enter the following command.
 
@@ -45,7 +48,7 @@ This experiment works best with one Pi running with no overclock and one running
 
 Select the desired clock speed and press enter, then go down to Finish and reboot the Pi.
 
-##Step 3: Run the count
+##Step 2: Run the count
 
 A simple Python script can be used to do the counting, alternatively a compiled C binary will also work.  Below is an example Python script.  This should be run from the command prompt outside of the X desktop.
 
@@ -71,7 +74,7 @@ Now you’re ready to begin the count.  This should be treated like a race with 
 
 `./count.py`
 
-##Step 4: Monitor the CPU temperature
+##Step 3: Monitor the CPU temperature
 
 The CPU temperature can now be monitored by logging in again on a sepparate Getty `ALT-F2` and using the `watch` command with `vcgencmd`.
 
