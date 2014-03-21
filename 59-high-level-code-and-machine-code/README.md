@@ -1,37 +1,40 @@
-High level code and machine code
-=============
+#High level code and machine code
+
 A practical exercise to support episode 59 of the Cambridge GCSE Computing MOOC.
 
-![image](./images/cover.jpg "Cover Image")
+![](./images/cover.jpg "Cover Image")
 
 ##Introduction
 
 This exercise is intended to be done on a Raspberry Pi.  The intention is to create three programs.  One using assembly, one with the GCC compiler for C and finally one with interpreted Python.  The main goal is to reinforce the understanding of the three types of source code translators and to demonstrate the difference between compiled and interpreted code.
 
-## Step 1: Setting Up your Pi
+## Step 0: Setting Up your Pi
+
 First check that you have all the parts you need to get your Raspberry Pi set up and working.
 
 - Raspberry Pi
-- Micro USB power adapter
-- An SD Card with Raspbian already set up through NOOBS
-- USB Keyboard
+- Micro USB power adaptor
+- An SD card with Raspbian already set up through NOOBS
+- USB keyboard
+- USB mouse
 - HDMI cable
-- A Monitor or TV
+- A monitor or TV
 
-**Activity Checklist**
+###Activity Checklist
 
 1.	Place the SD card into the slot of your Raspberry Pi. It will only fit one way so be careful not to break the card. 
 2.	Next connect the HDMI cable from the monitor (or TV) to the HDMI port on the Pi and turn on your monitor. 
-3.	Plug a USB keyboard into a USB slot on the Pi.
+3.	Plug the USB keyboard and mouse into the USB ports on the Pi.
 4.	Plug in the micro USB power supply and you should see some text appear on your screen.
-5.	When prompted to login type:
+5.  When prompted to login type:
 
-	```
-	Login: pi
-	Password: raspberry
-	```
+    ```
+    Login: pi
+    Password: raspberry
+    ```
 
-##Step 2: Assemblers
+
+##Step 1: Assemblers
 
 The program here is just going to add two numbers together and then halt, exactly the same as what was done with the Little Man Computer simulator but for real on a Raspberry Pi CPU.  Firstly create a blank text file named `asm.s`.
 
@@ -70,7 +73,7 @@ It is also worth it to look at the raw machine code of the program so the studen
 
 This will obviously be completely unintelligible to humans, but reinforces the point that the code has been translated from a human readable form to a machine readable one.  It may also be worth showing that the executable file `asm.bin` can be distributed and copied to another Raspberry Pi where it will successfully run without the need to be compiled again.
 
-##Step 3: Compilers
+##Step 2: Compilers
 
 This C program will count from 1 to 10 and print out each number on a separate line on the screen.  To demonstrate the compiler behavior of checking every line of the program for syntax errors, before translating it into machine code, we will deliberately add a fake command that the compiler will not be able to understand.
 
@@ -124,7 +127,7 @@ The numbers 1 to 10 should now appear.  We can also view the machine code of thi
 
 Completely unintelligible once again but proves that our code was compiled into machine code from a high level human readable source language.  Again we can also copy the file to another Raspberry Pi and execute if it seems necessary.
 
-##Step 4: Interpreters
+##Step 3: Interpreters
 
 We will now use Python, which is an interpreted language, to do exactly the same exercise again.  This will demonstrate that part of the program code will run up until the fake `wibble` command is encountered.  It will then cause the program to abort with an error.
 
